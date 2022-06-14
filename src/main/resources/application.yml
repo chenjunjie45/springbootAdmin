@@ -1,0 +1,33 @@
+server:
+  port: 8002
+
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.18.1.161:8848
+
+
+  security:
+    user:
+      name: "admin"
+      password: "admin!@#123"
+  boot:
+    admin:
+      context-path: "control"
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+# 日志
+logging:
+  file:
+    name: /application/applogs/admin.log
